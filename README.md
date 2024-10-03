@@ -1,12 +1,17 @@
 # DisplayServerStatus
 
 ## プラグイン説明
+マイクラ鯖のステータスをDiscordに表示
 
 ## コマンド
-
-## 使い方
+/displayserverstatus <update> [OP必須] - 手動でステータスを更新する
 
 ## configファイル
+ - token : "" - DiscordToken入力欄
+ - updateFrequency : 5 - 自動更新の頻度(分)
+ - activity : "Minecraft" - DiscordBOTのアクティビティ
+ - channelID : "" - ステータスを表示するチャンネルのID
+ - messageID : "" - メッセージID(プラグインが自動入力します)
 
 ## 開発環境
 - Minecraft Version : 1.20.1
