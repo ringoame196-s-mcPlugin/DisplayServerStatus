@@ -48,7 +48,7 @@ configure<BukkitPluginDescription> {
         register("displayserverstatus") {
             description = "サーバーステータス表示プラグインコマンド"
             permission = "op"
-            usage = "/displayserverstatus <>"
+            usage = "/displayserverstatus <update>"
         }
     }
 }
