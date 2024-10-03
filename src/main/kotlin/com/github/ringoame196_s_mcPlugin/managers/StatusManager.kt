@@ -60,7 +60,7 @@ class StatusManager(private val plugin: Plugin) {
         val title = "${Data.STATUS_TITLE}${Data.STATUS_ONLINE}"
         val color = Color.GREEN
         val onlinePlayerSize = Bukkit.getOnlinePlayers().size // オンライン人数
-        val ping = acquisitionPing() // ping取得
+        val ping = acquisitionPing() ?: "取得失敗" // ping取得
         val onlinePlayerField = Field(":teddy_bear: オンライン人数", "${onlinePlayerSize}人", false) // オンライン人数
         val pingField = Field(":hourglass: PING値", "${ping}ms", false) // ping値
         val fields = mutableListOf(onlinePlayerField, pingField)
@@ -101,8 +101,8 @@ class StatusManager(private val plugin: Plugin) {
         config.load(path)
     }
 
-    private fun acquisitionPing(): Long {
-        val ip = "8.8.8.8" // ローカルホスト
+    private fun acquisitionPing(): Long? {
+        val ip = "8.8.8.8" // Google Public DNS
         try {
             val inet = InetAddress.getByName(ip)
             val startTime = System.currentTimeMillis() // Pingの開始時間
@@ -112,11 +112,11 @@ class StatusManager(private val plugin: Plugin) {
             return if (reachable) {
                 endTime - startTime // Ping時間（ミリ秒）
             } else {
-                -1 // 到達できなかった場合
+                null // 到達できなかった場合
             }
         } catch (e: IOException) {
             e.printStackTrace()
-            return -1 // エラーが発生した場合
+            return null // エラーが発生した場合
         }
     }
 }
