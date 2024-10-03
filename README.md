@@ -1,5 +1,11 @@
 # DisplayServerStatus
 
+![image](https://github.com/user-attachments/assets/2b15c3e4-2573-4bd5-8989-0cdeedb60bc2)
+
+![image](https://github.com/user-attachments/assets/c9825ee5-f82a-4ef5-b5a5-9c279e73a3f0)
+
+
+
 ## プラグイン説明
 マイクラ鯖のステータスをDiscordに表示
 
