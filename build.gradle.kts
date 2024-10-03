@@ -25,6 +25,7 @@ repositories {
     mavenCentral()
     maven(url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     maven(url = "https://oss.sonatype.org/content/groups/public/")
+    maven(url = "https://m2.dv8tion.net/releases")
 }
 
 val shadowImplementation: Configuration by configurations.creating
@@ -33,6 +34,8 @@ configurations["implementation"].extendsFrom(shadowImplementation)
 dependencies {
     shadowImplementation(kotlin("stdlib"))
     compileOnly("org.spigotmc:spigot-api:$pluginVersion-R0.1-SNAPSHOT")
+    val jdaVersion = "4.4.0_350"
+    shadowImplementation("net.dv8tion:JDA:$jdaVersion") // JDA
 }
 
 configure<BukkitPluginDescription> {
