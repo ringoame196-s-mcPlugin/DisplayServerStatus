@@ -1,3 +1,5 @@
 token : "" # DiscordBotToken
+updateFrequency : 5 # 更新頻度(分)
+activity : "Minecraft" # DiscordBOTのアクティビティ
 channelID : "" # チャンネルID
 messageID : "" # メッセージID(自動設定)
