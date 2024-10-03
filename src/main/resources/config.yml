@@ -1,0 +1,3 @@
+token : "" # DiscordBotToken
+channelID : "" # チャンネルID
+messageID : "" # メッセージID(自動設定)
